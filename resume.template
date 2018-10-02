@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8"/>
+	<title>{{basics.name}} - {{basics.label}}</title>
+	<link rel="icon" type="image/ico" href="mmd/favicon.ico"/>
+	<meta name="description" content=""/>
+	<meta name="keywords" content=""/>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+	<link href='https://fonts.googleapis.com/css?family=Quando' rel='stylesheet' type='text/css'/>
+
+	<link rel='stylesheet' type='text/css' href='styles/font-awesome.min.css'/>
+	<link rel='stylesheet' type='text/css' href='styles/bootstrap.min.css'/>
+	<style type="text/css">
+		{{{css}}}
+	</style>
+</head>
+	
+<body>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
+				<div id="photo-header" class="text-center">
+					{{#photo}}
+					<div id="photo" style="margin-top : 80px;">
+						<img src="{{photo}}" alt="{{basics.name}}">
+					</div>
+					{{/photo}}
+					<div id="text-header">
+						<h1>{{basics.name}}<br/><span>{{basics.label}}</span></h1>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+				<div class="box clearfix">
+					<br/>
+					<h2><i class="fa fa-bullseye ico"></i> Contact</h2>
+					{{#basics.location}}
+					<div class="contact-item">
+						<div class="icon pull-left text-center"><span class="fa fa-map-marker fa-fw"></span></div>
+						<div class="title pull-right">{{basics.location.address}}</div>
+						<div class="title pull-right">{{basics.location.postalCode}} {{basics.location.city}}</div>
+					</div>
+					{{/basics.location}}
+					{{#basics.phone}}
+					<div class="contact-item">
+						<div class="icon pull-left text-center"><span class="fa fa-phone fa-fw"></span></div>
+						<div class="title only pull-right">{{basics.phone}}</div>
+					</div>
+					{{/basics.phone}}
+					{{#basics.email}}
+					<div class="contact-item">
+						<div class="icon pull-left text-center"><span class="fa fa-envelope fa-fw"></span></div>
+						<div class="title only pull-right"><a href="mailto:{{basics.email}}" target="_blank">{{basics.email}}</a></div>
+					</div>
+					{{/basics.email}}
+					{{#basics.website}}
+					<div class="contact-item">
+						<div class="icon pull-left text-center"><span class="fa fa-globe fa-fw"></span></div>
+						<div class="title only pull-right"><a href="{{basics.website}}" target="_blank">{{basics.website}}</a></div>
+					</div>
+					{{/basics.website}}
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<div class="box">
+					<h2><i class="fa fa-user ico"></i> À Propos</h2>
+					<p>
+						{{{basics.summary}}}
+					</p>
+				</div>
+				{{#skillsBool}}
+				<div class="box">
+					<h2><i class="fa fa-cogs ico"></i> Compétences</h2>
+					{{#skills}}
+					<div class="skills clearfix">
+						<div class="item-skills">{{name}}</div>
+						<div class="col-sm-offset-1 col-sm-12 clearfix" style="text-align: left;">
+							{{#keywords}}
+							<span class= "skill badge">{{{.}}}</span>
+							{{/keywords}}
+						</div>
+					</div>
+					{{/skills}}
+				</div>
+				{{/skillsBool}}
+				{{#interestsBool}}
+				<div class="box">
+					<h2><i class="fa fa-heart ico"></i> Hobbies</h2>
+					{{#interests}}
+					<div class="interests clearfix">
+						<div class="item-interests">{{name}}</div>
+						<div class="col-sm-offset-1 col-sm-12 clearfix" style="text-align: left;">
+							{{#keywords}}
+							<span class= "interest badge">{{{.}}}</span>
+							{{/keywords}}
+						</div>
+					</div>
+					{{/interests}}
+				</div>
+				{{/interestsBool}}
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				{{#workBool}}
+				<div class="box">
+					<h2><i class= "fa fa-users ico""></i> Expérience Professionelle</h2>
+					{{#work}}
+					<div class="job clearfix">
+						<div class="row">
+							<div class="details">
+								<div class="itemHight">{{company}}</div>
+								{{#website}}
+								<div class="address">
+									<a href="{{website}}" target= "_blank"><i class="fa fa-globe ico"></i> {{website}}</a>
+								</div>
+								{{/website}}
+								<div class="itemLow">{{startDate}} – {{endDate}}</div>
+								<div class="itemLow">Laval</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="job-details col-xs-11">
+								<div class="profession">{{position}}</div>
+								<div class="description">
+									{{{summary}}}
+									{{#boolHighlights}}
+									<div class="highlights">missions :</div>
+									<ul class="list-group">
+										{{#highlights}}
+										<li class="list-group-item">{{{.}}}</li>
+										{{/highlights}}
+									</ul>
+									{{/boolHighlights}}
+								</div>
+							</div>
+						</div>
+					</div>
+					{{/work}}
+				</div>
+				{{/workBool}}
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				{{#educationBool}}
+				<div class="box">
+					<h2><i class="fa fa-university ico"></i> Cursus Scolaire</h2>
+					<ul id="education" class="clearfix">
+						{{#education}}
+						<li>
+							<div class="year pull-left">{{endDate}} {{startDate}}</div>
+							<div class="description pull-right">
+								<h3>{{institution}}</h3>
+								<p><i class= "fa fa-graduation-cap ico"></i> {{area}}<br/>{{studyType}}</p>
+								{{#educationCourses}}
+								<div>Compétences :</div>
+								<ul class="list-group">
+									{{#courses}}
+									<li class="list-group-item">{{{.}}}</li>
+									{{/courses}}
+								</ul>
+								{{/educationCourses}}
+							</div>
+						</li>
+						{{/education}}
+					</ul>
+				</div>
+				{{/educationBool}}
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

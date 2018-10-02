@@ -1,0 +1,24 @@
+{
+  "name": "jsonresume-theme-killianPDF",
+  "version": "1.0",
+  "description": "A JSON Resume theme built with bootstrap",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "killian Poinsot",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kikipoinsot/jsonresume-theme-killianPDF.git"
+  },
+  "keywords": [
+    "jsonresume",
+    "resume",
+    "json"
+  ],
+  "bugs": {
+    "url": "https://github.com/kikipoinsot/jsonresume-theme-killianPDF/issues"
+  },
+  "homepage": "https://github.com/kikipoinsot/jsonresume-theme-killianPDF"
+}
